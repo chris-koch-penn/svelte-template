@@ -1,0 +1,30 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "dev": "PORT=5020 rollup -c -w",
+    "start": "sirv public --single",
+    "server": "cd api && python generate_config.py && export ENV=dev && chalice local --port 9009",
+    "db": "dynalite --port 8009",
+    "test-backend": "python -m api.tests.test_all",
+    "test-backend-verbose": "python -m api.tests.test_all --verbose"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-replace": "^2.3.4",
+    "axios": "^0.21.1",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-routing": "^1.5.0",
+    "svelte-spa-router": "^3.1.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
+  }
+}
